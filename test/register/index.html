@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form to SQL</title>
+    <link rel="stylesheet"  href="style.css">
+
+</head>
+<body> 
+<div class="top-bar">
+    <ul>
+    <li><a href="\test\attendance"><button> Record Attendance </button></a> </li>
+    <li><span><img src="\test\images\logomain.png" alt="logo goes here"></span></li>
+    <li><a href="/test/display" ><button> Records </button></a> </li>
+</ul>
+</div>
+<div>
+    <form action="submit.php" method="post" class="reg-form">
+        <h1> Register</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="id_number">ID Number:</label>
+        <input type="text" id="id_number" name="id_number" required>
+        <label for="department">Department</label>
+        <Select id="department" name="department" required>
+            <option value="Humanities">Humanities</option>
+            <option value="sciences">Sciences</option>
+        </Select>
+        
+        <label for="Insert Image">Student Picture</label>
+        <input type="file" id="studentimg" name="studentimg" required>
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+</div>
+
+
+
+
+</body>
+</html>
