@@ -26,7 +26,7 @@ justify-content: center;
 
 .top-bar ul {
 width:100%;
-list-style: none; /* Remove default bullet points */
+/*list-style: none; Remove default bullet points */
 padding: 0; /* Remove default padding */
 margin: 0; /* Remove default margin */
 justify-content: space-between;
@@ -79,6 +79,19 @@ background-color: rgb(255, 255, 255);
     border-radius: 5px;
     margin-top: 50px;
     background-color: rgb(255, 255, 255) 
+}
+
+.menufr{
+    background-color:#F2D6BD;
+    margin:auto;
+    width:600px;
+    padding:30px;
+
+}
+
+.menufr button {
+    padding: 5px;
+    display:inline;
 }
 
 
