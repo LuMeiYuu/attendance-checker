@@ -84,6 +84,10 @@ background-color: rgb(255, 255, 255);
     background-color: rgb(255, 255, 255) 
 }
 
+.card h3 {
+    margin-bottom:0px;
+}
+
 .menufr{
     background-color:#F2D6BD;
     margin:auto;

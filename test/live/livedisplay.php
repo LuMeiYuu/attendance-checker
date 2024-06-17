@@ -51,9 +51,9 @@ $recentEntry = $stmt->fetch();
 <?php
 if ($recentEntry) {
     echo "<h2>Most Recent Attendance Record</h2>";
-    echo "<p>ID Number: " . htmlspecialchars($recentEntry['id_number']) . "</p>";
-    echo "<p>Name: " . htmlspecialchars($recentEntry['name']) . "</p>";
-    echo "<p>Time: " . htmlspecialchars($recentEntry['time']) . "</p>";
+    echo "<h3> " . htmlspecialchars($recentEntry['name']) . "</h3>";
+    echo "<p> " . htmlspecialchars($recentEntry['id_number']) . "</p>";
+    echo "<p> " . htmlspecialchars($recentEntry['time']) . "</p>";
 } else {
     echo "<p>No attendance records found.</p>";
 }
