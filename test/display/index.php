@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "testing";
+$dbname = "test";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,8 +17,13 @@ if ($conn->connect_error) {
 $sql_students = "SELECT * FROM students";
 $result_students = $conn->query($sql_students);
 
-$sql_attend_comb = "SELECT * FROM combined_info";
-$result_attendance = $conn->query($sql_attend_comb);
+
+
+$sql = "SELECT students.name, attendance.attendance_time, attendance.attendance_date 
+        FROM students 
+        JOIN attendance ON students.id_number = attendance.id_number";
+
+$result_attendance = $conn->query($sql);
 
 // Close database connection
 $conn->close();
@@ -30,7 +35,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Students</title>
-    <link rel="stylesheet"  href="/test/style.css">
+    <link rel="stylesheet"  href="..\style.css">
 </head>
 <body >
 
@@ -74,7 +79,7 @@ $conn->close();
         <a href="download_attendance.php" download><button>Download CSV</button></a>
         
 
-<table border="1">
+        <table border="1">
     <tr>
         <th>Name</th>
         <th>Time</th>
@@ -82,13 +87,15 @@ $conn->close();
     </tr>
     <?php
     if ($result_attendance->num_rows > 0) {
-        while($row_attendance = $result_attendance->fetch_assoc()) {
+        while ($row_attendance = $result_attendance->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row_attendance["name"] . "</td>";
-            
-        // Format the time column to display in AM/PM format
-        echo "<td>" . date("h:i A", strtotime($row_attendance["time"])) . "</td>";
-        echo "<td>" . date("M d, Y", strtotime($row_attendance["time"])) . "</td>";
+
+            // Format the time column in AM/PM format
+            echo "<td>" . date("h:i A", strtotime($row_attendance["attendance_time"])) . "</td>";
+
+            // Format the date column properly
+            echo "<td>" . date("M d, Y", strtotime($row_attendance["attendance_date"])) . "</td>";
             echo "</tr>";
         }
     } else {
@@ -96,6 +103,8 @@ $conn->close();
     }
     ?>
 </table>
+
+
    </div>
 
 </div>

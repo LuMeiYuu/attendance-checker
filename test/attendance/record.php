@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "testing";
+$dbname = "test";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,7 +23,7 @@ $sql = "INSERT INTO attendance (id_number) VALUES ('$id_number')";
 if ($conn->query($sql) === TRUE) {
     // Success: Redirect back to the original page
     echo "<script>alert('Attendance recorded successfully for student');</script>";
-    echo "<script>window.location.href = '/test/attendance';</script>";
+    echo "<script>window.location.href = '/attendance-checker/test/attendance';</script>";
     exit(); // Ensure that no further code is executed after the redirect
 
 } else {

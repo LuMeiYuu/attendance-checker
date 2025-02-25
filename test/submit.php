@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "testing";
+    $dbname = "test";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute SQL statement
     if ($conn->query($sql) === TRUE) {
         // Redirect to display information page
-        header("Location: display_info.php");
+        echo "<script>window.location.href = '/register';</script>";
+
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
