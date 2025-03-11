@@ -1,4 +1,4 @@
 # attendance-checker
-PHP web based attendance checker with id number based recording
+PHP web based attendance checker with id number based recording.
 
-Initial setup in phpmyadmin needed.
+Initial SQL setup needed.
